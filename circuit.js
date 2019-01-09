@@ -11940,6 +11940,16 @@ var Circuit = (function (circuit) {
                 enumerable: true,
                 configurable: false
             },
+            cstaCallId: {
+                get: function () {
+                    if (!this.atcCallInfo) {
+                        return '';
+                    }
+                    return this.atcCallInfo.getCstaCallId();
+                },
+                enumerable: true,
+                configurable: false
+            },
             instanceId: {
                 get: function () { return _instanceId; },
                 enumerable: true,
@@ -51807,6 +51817,7 @@ var Circuit = (function (circuit) {
         var PUBLIC_CALL_FIELDS = [
             'activeMediaType',
             'callId',
+            'cstaCallId',
             'convId',
             'convType',
             'direction',
